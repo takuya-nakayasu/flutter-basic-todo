@@ -11,7 +11,13 @@ class _TodoPageState extends State<TodoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Todo")),
+      appBar: AppBar(title: const Text("My Todos")),
+      body: Column(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+        backgroundColor: Colors.green,
+      ),
     );
   }
 }
