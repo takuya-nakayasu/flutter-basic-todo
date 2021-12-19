@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'add_todo_page.dart';
+
 class TodoPage extends StatefulWidget {
   const TodoPage({Key? key}) : super(key: key);
 
@@ -14,7 +16,14 @@ class _TodoPageState extends State<TodoPage> {
       appBar: AppBar(title: const Text("My Todos")),
       body: Column(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push<void>(
+            context,
+            MaterialPageRoute<void>(
+              builder: (BuildContext context) => const AddTodoPage(),
+            ),
+          );
+        },
         child: const Icon(Icons.add),
         backgroundColor: Colors.green,
       ),
