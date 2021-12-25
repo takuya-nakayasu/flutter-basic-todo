@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'add_todo_page.dart';
 
-class TodoPage extends StatefulWidget {
-  const TodoPage({Key? key}) : super(key: key);
+class TodoListPage extends StatefulWidget {
+  const TodoListPage({Key? key}) : super(key: key);
 
   @override
-  State<TodoPage> createState() => _TodoPageState();
+  State<TodoListPage> createState() => _TodoListPageState();
 }
 
-class _TodoPageState extends State<TodoPage> {
+class _TodoListPageState extends State<TodoListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

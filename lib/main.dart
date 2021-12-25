@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'pages/todo_page.dart';
+import 'pages/todo_list_page.dart';
 
 void main() {
   runApp(const TodoApp());
@@ -11,6 +11,6 @@ class TodoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: TodoPage());
+    return const MaterialApp(home: TodoListPage());
   }
 }
