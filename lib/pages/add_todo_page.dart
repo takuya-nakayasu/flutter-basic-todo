@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../main.dart';
+
 class AddTodoPage extends StatefulWidget {
   const AddTodoPage({Key? key}) : super(key: key);
 
@@ -35,7 +37,8 @@ class _AddTodoPageState extends State<AddTodoPage> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context, _text);
+                  // Navigator.pop(context, _text);
+                  TodoApp.router?.pop(context, _text);
                 },
                 child: Text(
                   'リスト追加',

@@ -1,6 +1,6 @@
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-
-import 'add_todo_page.dart';
+import 'package:flutter_basic_todo/main.dart';
 
 class TodoListPage extends StatefulWidget {
   const TodoListPage({Key? key}) : super(key: key);
@@ -27,12 +27,14 @@ class _TodoListPageState extends State<TodoListPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          final newListText = await Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (BuildContext context) => const AddTodoPage(),
-            ),
-          );
+          // final newListText = await Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (BuildContext context) => const AddTodoPage(),
+          //   ),
+          // );
+          final newListText = await TodoApp.router?.navigateTo(context, '/add',
+              transition: TransitionType.material);
           if (newListText != null) {
             setState(() {
               todoList.add(newListText);
