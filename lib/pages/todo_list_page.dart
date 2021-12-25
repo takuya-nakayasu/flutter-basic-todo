@@ -10,27 +10,34 @@ class TodoListPage extends StatefulWidget {
 }
 
 class _TodoListPageState extends State<TodoListPage> {
+  List<String> todoList = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("My Todos")),
-      body: ListView(
-        children: <Widget>[
-          Card(
+      body: ListView.builder(
+        itemCount: todoList.length,
+        itemBuilder: (context, index) {
+          return Card(
             child: ListTile(
-              title: Text('aaaa'),
+              title: Text(todoList[index]),
             ),
-          ),
-        ],
+          );
+        },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push<void>(
+        onPressed: () async {
+          final newListText = await Navigator.push(
             context,
-            MaterialPageRoute<void>(
+            MaterialPageRoute(
               builder: (BuildContext context) => const AddTodoPage(),
             ),
           );
+          if (newListText != null) {
+            setState(() {
+              todoList.add(newListText);
+            });
+          }
         },
         child: const Icon(Icons.add),
         backgroundColor: Colors.green,

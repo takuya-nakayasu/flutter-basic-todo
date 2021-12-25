@@ -8,6 +8,7 @@ class AddTodoPage extends StatefulWidget {
 }
 
 class _AddTodoPageState extends State<AddTodoPage> {
+  String _text = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,12 +18,25 @@ class _AddTodoPageState extends State<AddTodoPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextField(),
+            Text(
+              _text,
+              style: TextStyle(color: Colors.blue),
+            ),
+            const SizedBox(height: 8),
+            TextField(
+              onChanged: (String value) {
+                setState(() {
+                  _text = value;
+                });
+              },
+            ),
             const SizedBox(height: 8),
             Container(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context, _text);
+                },
                 child: Text(
                   'リスト追加',
                   style: TextStyle(color: Colors.white),
