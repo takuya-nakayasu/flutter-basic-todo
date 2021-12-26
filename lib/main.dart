@@ -23,7 +23,7 @@ class TodoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // return const MaterialApp(home: TodoListPage());
     // 最初のrouteを「/」に設定
-    // FluroRouterのgeneratorをonGenerateRouteに設定
+    // Fluroから提供されているgeneratorをonGenerateRouteに設定
     return MaterialApp(
         initialRoute: '/', onGenerateRoute: TodoApp.router?.generator);
   }

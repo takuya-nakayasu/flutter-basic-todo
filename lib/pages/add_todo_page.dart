@@ -57,6 +57,13 @@ class _AddTodoPageState extends State<AddTodoPage> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          TodoApp.router?.navigateTo(context, '/account/nakayasu');
+        },
+        child: const Icon(Icons.add),
+        backgroundColor: Colors.green,
+      ),
     );
   }
 }
